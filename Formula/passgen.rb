@@ -3,7 +3,7 @@ class Passgen < Formula
   homepage "https://github.com/Gabrielhj17/PassGen"
   url "https://raw.githubusercontent.com/Gabrielhj17/PassGen/main/passgen-release.tar.gz"
   version "1.0.0"
-  sha256 "ca8b47daf425112d1b2c79e9cb5a61c237c4b5e77cb6cb8ef582c3d94ff7ac23"
+  sha256 "7bbc8ca3ca5289d4a0c6ffd32514b8fa98fa0e588923dcb1a3009e838cbd0853"
   license "MIT"
 
   depends_on "python@3.11"
@@ -13,6 +13,6 @@ class Passgen < Formula
   end
 
   test do
-    assert_match(/^[a-zA-Z0-9!@#$%^&*()_+]{12}$/, shell_output("#{bin}/passgen").chomp)
+    assert_match(/^Generated password: [a-zA-Z0-9!@#$%^&*()_+]{12}$/, shell_output("#{bin}/passgen").chomp)
   end
 end
