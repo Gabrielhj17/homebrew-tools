@@ -1,6 +1,6 @@
 class Ytdownload < Formula
   include Language::Python::Virtualenv
-
+  
   desc "Command-line video downloader using yt-dlp"
   homepage "https://github.com/Gabrielhj17/YTdownload"
   url "https://github.com/Gabrielhj17/YTdownload/raw/refs/heads/main/ytdownload-release.tar.gz"
@@ -11,8 +11,9 @@ class Ytdownload < Formula
   depends_on "python@3.11"
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/36/37/be7e63d85af5b82e5656a305ed61b864cf68b2262f3f9977752078784cf6/yt_dlp-2024.1.1-py2.py3-none-any.whl"
-    sha256 "f1471369e7d720903e24cc91ad3478a4b71491c617899d129ee40f2bbff85f15"
+    # The URL and sha256 should be updated to the latest version
+    url "https://files.pythonhosted.org/packages/95/cf/280a95c40acfdd0d5a3c61954becee69e761b3303cb8f79b7bc7624ca302/yt_dlp-2024.3.10-py2.py3-none-any.whl"
+    sha256 "58e0547f0c5d9929fab43185f2c4d4d30f3025b04daaefb29fcd9d69e6c43894"
   end
 
   def install
