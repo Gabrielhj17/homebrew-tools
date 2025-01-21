@@ -11,9 +11,8 @@ class Ytdownload < Formula
   depends_on "python@3.11"
 
   resource "yt-dlp" do
-    # The URL and sha256 should be updated to the latest version
-    url "https://files.pythonhosted.org/packages/95/cf/280a95c40acfdd0d5a3c61954becee69e761b3303cb8f79b7bc7624ca302/yt_dlp-2024.3.10-py2.py3-none-any.whl"
-    sha256 "58e0547f0c5d9929fab43185f2c4d4d30f3025b04daaefb29fcd9d69e6c43894"
+    url "https://files.pythonhosted.org/packages/54/7f/e3767c30b57c9a521c5ec7c9b36e6cf69bdb3e7a2e8b8cfaecb19e156f24/yt_dlp-2024.3.7-py2.py3-none-any.whl"
+    sha256 "f49a3bb48b03c608d7bb7f67e6515227a58c8fc70c12ed04034a841aaa066b24"
   end
 
   def install
