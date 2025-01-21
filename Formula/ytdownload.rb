@@ -7,7 +7,6 @@ class Ytdownload < Formula
   version "1.1.0"
   sha256 "ca245148b942caec61cb0b16d527a0f6a2d6c1fcefd3b5825a581539f34d285f"
   license "MIT"
-
   depends_on "python@3.11"
 
   resource "yt-dlp" do
@@ -19,8 +18,13 @@ class Ytdownload < Formula
     virtualenv_create(libexec, "python3.11")
     virtualenv_install_with_resources
     
-    (bin/"ytdownload").write_env_script "#{libexec}/bin/ytdownload",
-                                      :PYTHONPATH => ENV["PYTHONPATH"]
+    # Write a proper wrapper script
+    (bin/"ytdownload").write <<~EOS
+      #!/bin/bash
+      export PYTHONPATH="#{libexec}/lib/python3.11/site-packages:$PYTHONPATH"
+      exec "#{libexec}/bin/python3.11" -m ytdownload.ytdownload "$@"
+    EOS
+    chmod 0755, bin/"ytdownload"
   end
 
   test do
