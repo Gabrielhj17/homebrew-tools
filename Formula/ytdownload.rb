@@ -5,7 +5,7 @@ class Ytdownload < Formula
   homepage "https://github.com/Gabrielhj17/YTdownload"
   url "https://github.com/Gabrielhj17/YTdownload/raw/refs/heads/main/ytdownload-release.tar.gz"
   version "1.0.0"
-  sha256 "9cf46d6a916801250fc167d212566008a5aee0165c5101cdd0b4915e4a53334a"
+  sha256 "f4e62e59bec2b3b8eed02d2f44ba51375267f0d209dc2a033cf30be243208287"
   license "MIT"
 
   depends_on "python@3.11"
