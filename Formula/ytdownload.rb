@@ -4,7 +4,7 @@ class Ytdownload < Formula
   desc "Command-line video downloader using yt-dlp"
   homepage "https://github.com/Gabrielhj17/YTdownload"
   url "https://github.com/Gabrielhj17/YTdownload/raw/refs/heads/main/ytdownload-release.tar.gz"
-  version "1.0.0"
+  version "1.1.0"
   sha256 "f4e62e59bec2b3b8eed02d2f44ba51375267f0d209dc2a033cf30be243208287"
   license "MIT"
 
