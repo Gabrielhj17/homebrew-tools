@@ -18,16 +18,23 @@ class Ytdownload < Formula
     virtualenv_create(libexec, "python3.11")
     virtualenv_install_with_resources
     
-    # Write a proper wrapper script
-    (bin/"ytdownload").write <<~EOS
-      #!/bin/bash
-      export PYTHONPATH="#{libexec}/lib/python3.11/site-packages:$PYTHONPATH"
-      exec "#{libexec}/bin/python3.11" -m ytdownload.ytdownload "$@"
+    temp_script = Pathname.new("#{libexec}/bin/ytdownload_temp")
+    temp_script.write <<~EOS
+      #!/usr/bin/env python3
+      import os
+      import sys
+      sys.path.insert(0, "#{libexec}/lib/python3.11/site-packages")
+      from ytdownload.ytdownload import main
+      if __name__ == "__main__":
+          sys.exit(main())
     EOS
-    chmod 0755, bin/"ytdownload"
+    
+    FileUtils.chmod "+x", temp_script
+    
+    FileUtils.mv(temp_script, bin/"ytdownload", force: true)
   end
 
   test do
-    system bin/"ytdownload", "--help"
+    system "#{bin}/ytdownload", "--help"
   end
 end
