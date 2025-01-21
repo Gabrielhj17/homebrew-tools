@@ -12,15 +12,18 @@ class Ytdownload < Formula
 
   resource "yt-dlp" do
     url "https://files.pythonhosted.org/packages/fd/e9/61fc5947d35e9fcdd8efca88a5a2de53946a4aaf4e6c3e23f7b1b721b4c8/yt_dlp-2025.1.15.tar.gz"
-    sha256 "e8ec515d49bb62704915d13a22ee6fe03a5658d651e4e64574e3a17ee01f6e3b"
+    sha256 "59b638d6fa98b82bdb903df10c09cfe60057841b32937a2ff0da9978eb0916ea"
   end
 
   def install
+    virtualenv_create(libexec, "python3.11")
     virtualenv_install_with_resources
-    bin.install "ytdownload"
+    
+    (bin/"ytdownload").write_env_script "#{libexec}/bin/ytdownload",
+                                      :PYTHONPATH => ENV["PYTHONPATH"]
   end
 
   test do
-    system "#{bin}/ytdownload", "--help"
+    system bin/"ytdownload", "--help"
   end
 end
