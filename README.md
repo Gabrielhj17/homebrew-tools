@@ -30,7 +30,7 @@ A collection of tools and scripts to simplify and enhance your experience with [
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/Christopher-Jolly/homebrew-tools.git
+    git clone https://github.com/gabrielhj17/homebrew-tools.git
     ```
 
 2. Navigate to the project directory:
@@ -97,12 +97,6 @@ For major changes, please open an issue first to discuss your idea.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-### Contact
-
-If you have any questions or feedback, feel free to reach out via GitHub Issues or email me at [your-email@example.com](mailto:your-email@example.com).
 
 ---
 
